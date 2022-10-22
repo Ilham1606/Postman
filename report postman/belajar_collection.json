@@ -1,0 +1,471 @@
+{
+	"info": {
+		"_postman_id": "ffdc01a1-1a28-4423-9962-d4889f24b2a0",
+		"name": "Belajar API Airports",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23718535"
+	},
+	"item": [
+		{
+			"name": "get airports",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://airportgap.dev-tester.com/api/airports",
+					"protocol": "https",
+					"host": [
+						"airportgap",
+						"dev-tester",
+						"com"
+					],
+					"path": [
+						"api",
+						"airports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get airport id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://airportgap.dev-tester.com/api/airports/JFK",
+					"protocol": "https",
+					"host": [
+						"airportgap",
+						"dev-tester",
+						"com"
+					],
+					"path": [
+						"api",
+						"airports",
+						"JFK"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post airport distance",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "from",
+							"value": "JFK",
+							"type": "text"
+						},
+						{
+							"key": "to",
+							"value": "NRT",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://airportgap.dev-tester.com/api/airports/distance",
+					"protocol": "https",
+					"host": [
+						"airportgap",
+						"dev-tester",
+						"com"
+					],
+					"path": [
+						"api",
+						"airports",
+						"distance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "CcLShh7YzYfMwGJyri7MoAJN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "test@airportgap.com",
+							"description": "The email address for your Airport Gap account",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "airportgappassword",
+							"description": "Your Airport Gap account password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://airportgap.dev-tester.com/api/tokens",
+					"protocol": "https",
+					"host": [
+						"airportgap",
+						"dev-tester",
+						"com"
+					],
+					"path": [
+						"api",
+						"tokens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get favorites",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "CcLShh7YzYfMwGJyri7MoAJN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://airportgap.dev-tester.com/api/favorites",
+					"protocol": "https",
+					"host": [
+						"airportgap",
+						"dev-tester",
+						"com"
+					],
+					"path": [
+						"api",
+						"favorites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get favorites id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "CcLShh7YzYfMwGJyri7MoAJN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "https://airportgap.dev-tester.com/api/favorites/7574",
+					"protocol": "https",
+					"host": [
+						"airportgap",
+						"dev-tester",
+						"com"
+					],
+					"path": [
+						"api",
+						"favorites",
+						"7574"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post favorites JFK",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer CcLShh7YzYfMwGJyri7MoAJN"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "airport_id",
+							"value": "JFK",
+							"type": "text"
+						},
+						{
+							"key": "note",
+							"value": "My usual layover when visiting family",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://airportgap.dev-tester.com/api/favorites",
+					"protocol": "https",
+					"host": [
+						"airportgap",
+						"dev-tester",
+						"com"
+					],
+					"path": [
+						"api",
+						"favorites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post favorites NRT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 201ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{base.token}}"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "airport_id",
+							"value": "NRT",
+							"type": "text"
+						},
+						{
+							"key": "note",
+							"value": "My usual layover when visiting family",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base.web}}/api/favorites",
+					"host": [
+						"{{base.web}}"
+					],
+					"path": [
+						"api",
+						"favorites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post favorites GKA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 201ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{base.token}}"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "airport_id",
+							"value": "GKA",
+							"type": "text"
+						},
+						{
+							"key": "note",
+							"value": "My usual layover when visiting family",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base.web}}/api/favorites",
+					"host": [
+						"{{base.web}}"
+					],
+					"path": [
+						"api",
+						"favorites"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
