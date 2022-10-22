@@ -1,0 +1,21 @@
+{
+	"id": "7369065f-a689-42c5-a1e4-46a154d4853c",
+	"name": "airport",
+	"values": [
+		{
+			"key": "base.web",
+			"value": "https://airportgap.dev-tester.com",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "base.token",
+			"value": "CcLShh7YzYfMwGJyri7MoAJN",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2022-10-22T06:31:31.303Z",
+	"_postman_exported_using": "Postman/10.0.20"
+}
